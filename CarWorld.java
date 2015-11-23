@@ -16,7 +16,9 @@ public class CarWorld extends World implements Component
     private List<Component> leafs;
     
     private int BananaScore;
-    public Bar bar = new Bar("", "Weapon Strength", 0, 100);
+    private int _currPower;
+    private boolean _init = true;
+    public Bar bar = new Bar("", "Weapon Strength", 0, 25);
         
     /**
      * Constructor for objects of class CarWorld.
@@ -47,25 +49,18 @@ public class CarWorld extends World implements Component
         add(new bananaScore("Banana Score"), 500, 550 );
         //Weapon Power visualization
         bar.setShowTextualUnits(false); 
-        addObject(bar, 400 , 50 );
+        addObject(bar, 500 , 50 );
         
-        /*add(new Line(),300,0);
-        add(new Line(),300,90);
-        add(new Line(),300,180);
-        add(new Line(),300,270);
-        add(new Line(),300,360);
-        add(new Line(),300,450);
-        add(new Line(),300,540);*/
-        add(new Background(), Greenfoot.getRandomNumber(150), Greenfoot.getRandomNumber(600));
-        add(new Background(), Greenfoot.getRandomNumber(150), Greenfoot.getRandomNumber(600));
-        add(new Background(), Greenfoot.getRandomNumber(150), Greenfoot.getRandomNumber(600));
-        add(new Background(), Greenfoot.getRandomNumber(150), Greenfoot.getRandomNumber(600));
-        add(new Background(), Greenfoot.getRandomNumber(150), Greenfoot.getRandomNumber(600));
-        add(new Background(), Greenfoot.getRandomNumber(150)+450, Greenfoot.getRandomNumber(600));
-        add(new Background(), Greenfoot.getRandomNumber(150)+450, Greenfoot.getRandomNumber(600));
-        add(new Background(), Greenfoot.getRandomNumber(150)+450, Greenfoot.getRandomNumber(600));
-        add(new Background(), Greenfoot.getRandomNumber(150)+450, Greenfoot.getRandomNumber(600));
-        add(new Background(), Greenfoot.getRandomNumber(150)+450, Greenfoot.getRandomNumber(600));
+        add(new Background(), Greenfoot.getRandomNumber(100)+55, Greenfoot.getRandomNumber(600));
+        add(new Background(), Greenfoot.getRandomNumber(100)+55, Greenfoot.getRandomNumber(600));
+        add(new Background(), Greenfoot.getRandomNumber(100)+55, Greenfoot.getRandomNumber(600));
+        add(new Background(), Greenfoot.getRandomNumber(100)+55, Greenfoot.getRandomNumber(600));
+        add(new Background(), Greenfoot.getRandomNumber(100)+55, Greenfoot.getRandomNumber(600));
+        add(new Background(), Greenfoot.getRandomNumber(150)+430, Greenfoot.getRandomNumber(600));
+        add(new Background(), Greenfoot.getRandomNumber(150)+430, Greenfoot.getRandomNumber(600));
+        add(new Background(), Greenfoot.getRandomNumber(150)+430, Greenfoot.getRandomNumber(600));
+        add(new Background(), Greenfoot.getRandomNumber(150)+430, Greenfoot.getRandomNumber(600));
+        add(new Background(), Greenfoot.getRandomNumber(150)+430, Greenfoot.getRandomNumber(600));
         add(new Information(),300,300);
     }
 
@@ -81,6 +76,9 @@ public class CarWorld extends World implements Component
             chanceToRocket();
             chanceToSmoker();
             chanceToBanana();
+            
+            changeWeaponBar();
+            
             //setCounter();
             //chanceToPedestrianCrossing();
         }
@@ -90,11 +88,11 @@ public class CarWorld extends World implements Component
     {
         if(Greenfoot.getRandomNumber(50)<1)
         {
-            add(new Background(), Greenfoot.getRandomNumber(150), 0);
+            add(new Background(), Greenfoot.getRandomNumber(100)+55, 0);
         }
         if(Greenfoot.getRandomNumber(50)<1)
         {
-            add(new Background(), Greenfoot.getRandomNumber(150)+450, 0);
+            add(new Background(), Greenfoot.getRandomNumber(100)+440, 0);
         }
     }
 
@@ -102,7 +100,7 @@ public class CarWorld extends World implements Component
     {
         if(Greenfoot.getRandomNumber(100)<1)
         {
-            add(new Vehicle(), Greenfoot.getRandomNumber(185)+215, 0);
+            add(new Vehicle(), Greenfoot.getRandomNumber(185)+210, 0);
         }
     }
     
@@ -110,7 +108,7 @@ public class CarWorld extends World implements Component
     {
         if(Greenfoot.getRandomNumber(1000)<1)
         {
-            add(new Rocket(), Greenfoot.getRandomNumber(185)+215, 0);
+            add(new Rocket(), Greenfoot.getRandomNumber(185)+210, 0);
         }
     }
     
@@ -118,7 +116,7 @@ public class CarWorld extends World implements Component
     {
         if(Greenfoot.getRandomNumber(1000)<1)
         {
-            add(new Smoker(), Greenfoot.getRandomNumber(185)+215, 0);
+            add(new Smoker(), Greenfoot.getRandomNumber(185)+210, 0);
         }
     }
     
@@ -130,6 +128,20 @@ public class CarWorld extends World implements Component
         }
     }
 
+    public void changeWeaponBar(){
+        
+        if(_init){
+            _init = false;
+            
+            //Give some weapon power initially 
+            
+            _currPower = 5 ;
+            bar.setValue((int)_currPower);
+        }
+        else
+            bar.setValue((int)_currPower);
+    }
+    
     /*public void setCounter()
     {
         counter++;
@@ -181,6 +193,30 @@ public class CarWorld extends World implements Component
         BananaScore += scoreToAdd;
     }
     
+    public int getCurrPower(){
+        return _currPower;
+    }
+    
+    public void addCurrentPower()
+    {
+        /*
+        * Set 3% of remaining bar everytime
+        * Hence power collection would reduce over time
+        *
+        */
+        if(_currPower != 25)
+            _currPower += 0.3 * (25 - _currPower);
+    }
+    
+    public void reduceCurrentPower()
+    {
+        /*
+        * Reduce 10% of current bar everytime
+        */
+       
+        if(_currPower != 0)
+            _currPower -= 0.1 * _currPower;
+    }
     
     public int getLives()
     {

@@ -79,17 +79,23 @@ public class Car extends Actor implements IKeyPadSubject,Component
     {
         if(((CarWorld) getWorld()).getPause() == false)
         {
-            if(counter == 0)
-            {
-                if (Greenfoot.isKeyDown("space"))
+            if( ((CarWorld) getWorld()).getCurrPower() != 0 ){
+                
+                if(counter == 0)
                 {
-                    getWorld().addObject(new Bomb(),getX(),getY());
-                    counter = 50;
+                    if (Greenfoot.isKeyDown("space"))
+                    {
+                        getWorld().addObject(new Bomb(),getX(),getY());
+                        counter = 50;
+                    
+                        ((CarWorld) getWorld()).reduceCurrentPower();
+                    }
                 }
-            }
-            else
-            {
-                counter--;
+                else
+                {
+                    counter--;
+                }
+            
             }
         }
     }

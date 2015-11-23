@@ -25,9 +25,9 @@ public class Bomb  extends Actor implements Component
     public void act() 
     {
        if(Car.isRocket)
-        setImage(new GreenfootImage("rocket_only.png")); 
+            setImage(new GreenfootImage("rocket_only.png")); 
        else if(Car.isSmoker)
-        setImage(new GreenfootImage("fart_smog.png"));
+            setImage(new GreenfootImage("fart_smog.png"));
        
         
        moveUp();

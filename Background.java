@@ -3,16 +3,14 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class Nature here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Jay Sardhara  
+ * @version 0.0.1
  */
 public class Background  extends Actor implements Component
 {
     
     private Actor collided;
-    /*private GreenfootImage image1;
-    private GreenfootImage image2;
-    private GreenfootImage image3;*/
+  
     private GreenfootImage image4;
     private GreenfootImage image5;
     private GreenfootImage image6;
@@ -20,18 +18,12 @@ public class Background  extends Actor implements Component
     public Background()
     {
        collidedOn = 0;
-       /*image1 = new GreenfootImage("flower2.png");
-       image2 = new GreenfootImage("grass.png");
-       image3 = new GreenfootImage("sunflower.png");*/
+       
        image4 = new GreenfootImage("tree.png");
        image5 = new GreenfootImage("tree2.png");
-       image6 = new GreenfootImage("placeholder.png");
+       image6 = new GreenfootImage("stone.png");
        randomImage();
-       //collided = getOneIntersectingObject(Background.class);
-       //if (collided != null)
-       //{
-       //   collidedOn = 1;
-       //}
+       
     }
     public void initialize(){
     }
@@ -53,19 +45,7 @@ public class Background  extends Actor implements Component
     }
     public void randomImage()
     {
-       /*if (Greenfoot.getRandomNumber(6)<1)
-       {
-          setImage(image1);
-       }
-       else if (Greenfoot.getRandomNumber(6)<1)
-       {
-          setImage(image2);
-       }
-       else if (Greenfoot.getRandomNumber(6)<1)
-       {
-          setImage(image3);
-       }
-       else*/ if (Greenfoot.getRandomNumber(6)<1)
+        if (Greenfoot.getRandomNumber(6)<1)
        {
           setImage(image4);
        }
@@ -77,10 +57,7 @@ public class Background  extends Actor implements Component
            
             setImage(image6);
        }
-       /*else
-       {
-          setImage(image6);
-       }*/
+       
     }
      public void check()
     {

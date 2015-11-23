@@ -24,11 +24,11 @@ public class CarController implements IKeyPadObserver
 
         if (Greenfoot.isKeyDown("right"))    
         {
-            subject.setLocation( x+2, y );
+            subject.setLocation( x+4, y );
         }
         if (Greenfoot.isKeyDown("left"))    
         {
-            subject.setLocation( x-2, y );
+            subject.setLocation( x-4, y );
         }
 
     }

@@ -46,10 +46,15 @@ public class Smoker  extends Actor implements Component
     
     public void check()
     {
-        collided = getOneIntersectingObject(Smoker.class);
-        if (collided != null || getY()>=(getWorld().getHeight()-1))
+        collided = getOneIntersectingObject(Car.class);
+        if (collided != null)
         {
-           getWorld().removeObject(this);
+            ((CarWorld) getWorld()).addCurrentPower();
+            //getWorld().removeObject(this);
+        }
+        else if ( getY()>=(getWorld().getHeight()-1) )
+        {
+            getWorld().removeObject(this);            
         }
     }
 }
