@@ -1,7 +1,0 @@
-#BlueJ class context
-comment0.params=subject
-comment0.target=CarController(IKeyPadSubject)
-comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ CarController\r\n
-comment1.params=
-comment1.target=void\ keyEventUpdate()
-numComments=2
