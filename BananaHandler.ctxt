@@ -2,9 +2,5 @@
 comment0.params=nextInChain
 comment0.target=void\ setNextChain(Chain)
 comment1.params=a
-<<<<<<< HEAD
 comment1.target=void\ calculate(Minion)
-=======
-comment1.target=void\ calculate(Car)
->>>>>>> f94fd9031aa73377e96e9b72c468865abc01c467
 numComments=2

@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.params=text
+comment0.target=Label(java.lang.String)
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ Label\r\n
+comment1.params=
+comment1.target=java.lang.String\ getText()
+comment2.params=text
+comment2.target=void\ setText(java.lang.String)
+numComments=3

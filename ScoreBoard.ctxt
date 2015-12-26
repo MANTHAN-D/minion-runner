@@ -1,5 +1,4 @@
 #BlueJ class context
-<<<<<<< HEAD
 comment0.params=state
 comment0.target=ScoreBoard(java.lang.String)
 comment0.text=\r\n\ Create\ a\ score\ board\ with\ dummy\ result\ for\ testing.\r\n
@@ -10,17 +9,5 @@ comment2.target=ScoreBoard(int,\ java.lang.String)
 comment2.text=\r\n\ Create\ a\ score\ board\ for\ the\ final\ result.\r\n
 comment3.params=prefix1\ score
 comment3.target=void\ makeImage(java.lang.String,\ int)
-=======
-comment0.params=
-comment0.target=ScoreBoard()
-comment0.text=\r\n\ Create\ a\ score\ board\ with\ dummy\ result\ for\ testing.\r\n
-comment1.params=
-comment1.target=void\ initialize()
-comment2.params=score\ lives
-comment2.target=ScoreBoard(int,\ int)
-comment2.text=\r\n\ Create\ a\ score\ board\ for\ the\ final\ result.\r\n
-comment3.params=title\ prefix1\ prefix2\ score\ lives
-comment3.target=void\ makeImage(java.lang.String,\ java.lang.String,\ java.lang.String,\ int,\ int)
->>>>>>> f94fd9031aa73377e96e9b72c468865abc01c467
 comment3.text=\r\n\ Make\ the\ score\ board\ image.\r\n
 numComments=4

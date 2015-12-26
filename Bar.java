@@ -1,10 +1,3 @@
-<<<<<<< HEAD
-=======
-// AUTHOR: danpost
-// Version: 2
-// Last modified: February, 8, 2012
-
->>>>>>> f94fd9031aa73377e96e9b72c468865abc01c467
 import greenfoot.*;
 import java.awt.Color;
 import java.awt.Font;
@@ -25,11 +18,7 @@ public class Bar extends Actor
     private Color textColor = Color.BLACK; // the color of all text and the frame of the bar itself
     private Color safeColor = Color.GREEN; // the color of the bar while in the safe range
     private Color dangerColor = Color.RED; // the color of the bar while in the danger range
-<<<<<<< HEAD
     //  The color of the bar AT the breakpoint will be the average color between the safe color and the danger color
-=======
-//  The color of the bar AT the breakpoint will be the average color between the safe color and the danger color
->>>>>>> f94fd9031aa73377e96e9b72c468865abc01c467
     private float fontSize = 18.0f; // the size of the text
     private int value = 0; // the current value of the bar
     private int maximumValue = 0; // the maximum value of the bar
@@ -37,11 +26,7 @@ public class Bar extends Actor
     private String referenceText = ""; // the title string (who or what the meter/bar is for)
     private String unitOfMeasure = ""; // the unit of measure of the bar (any quantitative standard of measurement) 
     private boolean showTextualUnits = true; // determines whether or not the textual quantity of the bar is to show
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> f94fd9031aa73377e96e9b72c468865abc01c467
     /**
      * Bar Constructor: saves the initial values that are brought in and creates the bar image through the 'add(int)' call,
      * which sets the initial value of the bar and calls the 'newImage' method to build and set a new image for the bar.
@@ -58,11 +43,7 @@ public class Bar extends Actor
         maximumValue = maxValue;
         add(initValue);
     }
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> f94fd9031aa73377e96e9b72c468865abc01c467
     /**
      * Method 'newImage': builds a new image for the bar, determined by the values set for it
      */
@@ -111,11 +92,7 @@ public class Bar extends Actor
         image.drawImage(rightImg, maxX + barImg.getWidth(), (image.getHeight() - rightImg.getHeight()) / 2);
         setImage(image);
     }
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> f94fd9031aa73377e96e9b72c468865abc01c467
     /**
      * Method 'add': add an amount to the value of the bar, checks to make sure the new value is between minimumValue and maximumValue,
      * then, calls 'newImage' to build and set the new image for the bar.
@@ -128,11 +105,7 @@ public class Bar extends Actor
         checkValue();
         newImage();
     }
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> f94fd9031aa73377e96e9b72c468865abc01c467
     /**
      * Method 'subtract': subtracts an amount from the value of the bar, checks to make sure the new value does not overstep its bounds,
      * then, calls 'newImage' to build and set the new image for the bar.
@@ -145,11 +118,7 @@ public class Bar extends Actor
         checkValue();
         newImage();
     }
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> f94fd9031aa73377e96e9b72c468865abc01c467
     /**
      * Method 'checkValue': ensures that the new value in between the minimum value and the maximum value for the bar
      */
@@ -158,44 +127,28 @@ public class Bar extends Actor
         if (value < minimumValue) value = minimumValue;
         if (value > maximumValue) value = maximumValue;
     }
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> f94fd9031aa73377e96e9b72c468865abc01c467
     /**
      * Method 'getValue': returns the current value of the bar
      *
      * @return: the current value of the bar
      */
     public int getValue() { return value; }
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> f94fd9031aa73377e96e9b72c468865abc01c467
     /**
      * Method 'getBarWidth': returns the current width of the bar (color portion only)
      *
      * @return: the current width of the bar
      */
     public int getBarWidth() { return barWidth; }
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> f94fd9031aa73377e96e9b72c468865abc01c467
     /**
      * Method 'getBarHeight': returns the current height of the bar (color portion only)
      *
      * @return: the current height of the bar
      */
     public int getBarHeight() { return barHeight; }
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> f94fd9031aa73377e96e9b72c468865abc01c467
     /**
      * Method 'getBreakPercent': returns the range percent at which the color of the bar changes between lower values and higher values
      * (the variable 'usingBreakValue' must be 'false' for percent breaking is to be active; using 'setBreakPercent' will automatically
@@ -204,11 +157,7 @@ public class Bar extends Actor
      * @return: the percent value that determines where the color of the bar will change
      */
     public int getBreakPercent() { return breakPercent; } // use boolean getUsingBreakValue() method before calling (if false)
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> f94fd9031aa73377e96e9b72c468865abc01c467
     /**
      * Method 'getBreakValue': returns the current value at which the color of the bar will change
      * (the variable 'usingBreakValue' must be 'true' for value breaking is to be active; using 'setBreakValue' will automatically
@@ -217,11 +166,7 @@ public class Bar extends Actor
      * @return: the value where the color of the bar will change
      */
     public int getBreakValue() { return breakValue; } // use boolean getUsingBreakValue() method before calling (if true)
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> f94fd9031aa73377e96e9b72c468865abc01c467
     /**
      * Method 'getBreakLow': returns the boolean value that determines if the danger color is used at the low end or the high end of the range
      * (setting it to 'minimumValue' or 'maximumValue' will essentially deactivate breaking)
@@ -229,154 +174,98 @@ public class Bar extends Actor
      * @return: the break state (danger color for low values when true) of the bar
      */
     public boolean getBreakLow() { return breakLow; }
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> f94fd9031aa73377e96e9b72c468865abc01c467
     /**
      * Method 'getBackgroundColor': returns the current background color of the image for the bar
      *
      * @return: the current color used for the background of the bar image (behind the bar and the text, alike)
      */
     public Color getBackgroundColor() { return backgroundColor; }
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> f94fd9031aa73377e96e9b72c468865abc01c467
     /**
      * Method 'getTextColor': returns the current text and frame color
      *
      * @return: the current color used for the text and the frame of the bar
      */
     public Color getTextColor() { return textColor; }
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> f94fd9031aa73377e96e9b72c468865abc01c467
     /**
      * Method 'getSafeColor': returns the current color used for values above any break point, if 'breakLow' is 'true', else below
      *
      * @return: the current color of the color portion of the bar used for 'safe' values
      */
     public Color getSafeColor() { return safeColor; }
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> f94fd9031aa73377e96e9b72c468865abc01c467
     /**
      * Method 'getDangerColor': returns the current color used for values below any break point, if 'breakLow' is 'true' else above
      *
      * @return: the current color of the color portion of the bar used for 'danger' values
      */
     public Color getDangerColor() { return dangerColor; }
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> f94fd9031aa73377e96e9b72c468865abc01c467
     /**
      * Method 'getFontSize': returns the current font size for the text used in the bar image
      *
      * @return: the current font size for the text of the bar
      */
     public float getFontSize() { return fontSize; }
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> f94fd9031aa73377e96e9b72c468865abc01c467
     /**
      * Method 'getMaximumValue': returns the current maximum value of the bar
      *
      * @return: the current value set as the maximum value of the bar
      */
     public int getMaximumValue() { return maximumValue; }
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> f94fd9031aa73377e96e9b72c468865abc01c467
     /**
      * Method 'getMinimumValue': returns the current minimum value of the bar
      *
      * @return: the current value set as the minimum value of the bar
      */
     public int getMinimumValue() { return minimumValue; }
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> f94fd9031aa73377e96e9b72c468865abc01c467
     /**
      * Method 'getReferenceText': returns the string set as the title text of the bar
      *
      * @return: the current title text of the bar
      */
     public String getReferenceText() { return referenceText; }
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> f94fd9031aa73377e96e9b72c468865abc01c467
     /**
      * Method 'getUnitOfMeasure': returns the current string used to qualify the value of the bar
      *
      * @return: the current unit of measure for the value of the bar
      */
     public String getUnitOfMeasure() { return unitOfMeasure; }
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> f94fd9031aa73377e96e9b72c468865abc01c467
     /**
      * Method 'getShowTextualUnits': returns the current state of showing/hiding of the textual value and unit of measure of the bar
      *
      * @return: the current state of showing/hiding of the string representation of the value and unit of measure on the right side of the bar
      */
     public boolean getShowTextualUnits() { return showTextualUnits; }
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> f94fd9031aa73377e96e9b72c468865abc01c467
     /**
      * Method 'setValue': sets a new value for the bar, if in bounds
      *
      * @param 'val': the new value for the bar
      */
     public void setValue(int val) { value = val; checkValue(); newImage(); }
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> f94fd9031aa73377e96e9b72c468865abc01c467
     /**
      * Method 'setBarWidth': sets a new width for the color portion of the bar
      *
      * @param 'width': the new width for the color portion of the bar
      */
     public void setBarWidth(int width) { if (width > 9) { barWidth = width; newImage(); } }
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> f94fd9031aa73377e96e9b72c468865abc01c467
     /**
      * Method 'setBarHeight': sets a new height for the color portion of the bar
      *
      * @param 'height': the new height for the color portion of the bar
      */
     public void setBarHeight(int height) { if (height > 1) { barHeight = height; newImage(); } }
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> f94fd9031aa73377e96e9b72c468865abc01c467
     /**
      * Method 'setBreakPercent': sets a new percentage value where the bar changes colors between safe and danger values
      * (if set to zero or one hundred, the bar will stay a constant color)
@@ -385,11 +274,7 @@ public class Bar extends Actor
      * @param 'percent': the new percentage in the range of allowable values in the bar at which the color of the bar changes between 'safeColor' and 'dangerColor'
      */
     public void setBreakPercent(int percent) { if (percent >= 0 && percent <= 100) { breakPercent = percent; usingBreakValue = false; newImage(); } }
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> f94fd9031aa73377e96e9b72c468865abc01c467
     /**
      * Method 'setBreakValue': sets a new value for where the color of the color portion of the bar will change between safe and danger values
      * (if set to minimumValue or maximumValue, the bar will stay a constant color)
@@ -398,121 +283,77 @@ public class Bar extends Actor
      * @param 'brkVal': the new value where the color of the color portion of the bar will change between 'safeColor' and 'dangerColor'
      */
     public void setBreakValue(int brkVal) { if (brkVal >= minimumValue && brkVal <= maximumValue) {breakValue = brkVal; usingBreakValue = true; newImage(); } }
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> f94fd9031aa73377e96e9b72c468865abc01c467
     /**
      * Method setBreakLow: sets the direction of safe to danger values; true: danger values are low and safe values are high; false: danger values are high ...
      *
      * @param 'lowBreak': the new state of break direction to use with the bar
      */
     public void setBreakLow(boolean lowBreak) { breakLow = lowBreak; newImage(); }
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> f94fd9031aa73377e96e9b72c468865abc01c467
     /**
      * Method 'setBackgroundColor': sets a new color to use behind the text and bar of the image
      *
      * @param 'color': the new color to use for the background color of the bar image
      */
     public void setBackgroundColor(Color color) { backgroundColor = color; newImage(); }
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> f94fd9031aa73377e96e9b72c468865abc01c467
     /**
      * Method 'setTextColor': sets a new color for the text and frame of the bar image
      *
      * @param 'color': the new color for the text and frame of the bar image
      */
     public void setTextColor(Color color) { textColor = color; newImage(); }
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> f94fd9031aa73377e96e9b72c468865abc01c467
     /**
      * Method 'setSafeColor': sets a new color for the color portion of the bar for safe values
      *
      * @param 'color': the new color for safe values in the color portion of the bar
      */
     public void setSafeColor(Color color) { safeColor = color; newImage(); }
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> f94fd9031aa73377e96e9b72c468865abc01c467
     /**
      * Method 'setDangerColor': sets a new color for the color portion of the bar for danger values
      *
      * @param 'color': the new color for danger values in the color portion of the bar
      */
     public void setDangerColor(Color color) { dangerColor = color; newImage(); }
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> f94fd9031aa73377e96e9b72c468865abc01c467
     /**
      * Method 'setFontSize': sets the font size to use for all text in the bar image
      *
      * @param 'size': the new font size for text used in the bar
      */
     public void setFontSize(float size) { if (size > 7) { fontSize = size; newImage(); } }
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> f94fd9031aa73377e96e9b72c468865abc01c467
     /**
      * Method 'setMaximumValue': sets a new maximum for allowable values for the bar
      *
      * @param 'maxVal': the new maximum for the value of the bar
      */
     public void setMaximumValue(int maxVal) { if (maxVal > minimumValue) { maximumValue = maxVal; newImage(); } }
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> f94fd9031aa73377e96e9b72c468865abc01c467
     /**
      * Method 'setMinimumValue': sets a new minimum for allowable values for the bar
      *
      * @param 'minVal': the new minimum for the value of the bar
      */
     public void setMinimumValue(int minVal) { if (minVal < maximumValue) { minimumValue = minVal; newImage(); } }
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> f94fd9031aa73377e96e9b72c468865abc01c467
     /**
      * Method 'setReferenceText': sets new title text for the bar
      *
      * @param 'refText': the new title text (or reference text) for the bar
      */
     public void setReferenceText(String refText) { referenceText = refText; newImage(); }
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> f94fd9031aa73377e96e9b72c468865abc01c467
     /**
      * Method 'setUnitOfMeasure': sets new unit of measure text for the bar
      *
      * @param 'uom': the new unit of measure text for the bar
      */
     public void setUnitOfMeasure(String uom) { unitOfMeasure = uom; newImage(); }
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> f94fd9031aa73377e96e9b72c468865abc01c467
     /**
      * Method 'setShowTextualUnits': sets the state of showing/hiding of the textual value and unit of measure on the right side of the bar
      *

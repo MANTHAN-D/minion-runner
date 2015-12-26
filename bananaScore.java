@@ -6,21 +6,21 @@ import java.awt.Font;
  * Counter that displays a number.
  * 
  * @author Jay Sardhara
- * @version 0.0.1
+ * @version 1.0.1
  */
-public class bananaScore extends Actor implements Component
+public class BananaScore extends Actor implements Component
 {
     public static int value = 0;
     public static int target = 0;
     public static String text;
     public static int stringLength;
-    
-    public bananaScore()
+
+    public BananaScore()
     {
         this("");
     }
-    
-    public bananaScore(String prefix)
+
+    public BananaScore(String prefix)
     {
         value = 0;
         target = 0;
@@ -31,32 +31,29 @@ public class bananaScore extends Actor implements Component
         GreenfootImage image = getImage();
         Font font = image.getFont();
         image.setFont(font.deriveFont(24.0F));  // use larger font
-        
+
         updateImage();
     }
-    
+
     public void initialize(){
     }
-    
+
     public void act()
     {
-       target = ((CarWorld) getWorld()).getBananaScore();
-       /*
-       if(value > target)
-       {
-          value = 0;
-          updateImage();
-       }*/
-       updateImage();
+        target = ((MinionWorld) getWorld()).getBananaScore();
+        updateImage();
     }
+
     public void add(int score)
     {
         target += score;
     }
+
     public int getValue()
     {
         return value;
     }
+
     /**
      * Make the image
      */
